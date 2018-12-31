@@ -33,6 +33,8 @@ public class Motorcycle extends Bike {
     public static void getMotorWheelNum(){
         System.out.println("2");
     }
+    public void lagerTank(int increment){ this.gasTank = gasTank+ increment; }
+
 
     public static void main(String []args){
         Motorcycle firstMotor = new Motorcycle("round",2,"Triangle",2,25,"YAMAHA");
