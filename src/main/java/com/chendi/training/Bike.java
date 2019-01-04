@@ -11,6 +11,7 @@ public class Bike {
         this.wheelNum = num;
         this.seatShape = sShape;
     }
+    public Bike(){}
 
     public void move(){
         System.out.println("5 mile/hours");
