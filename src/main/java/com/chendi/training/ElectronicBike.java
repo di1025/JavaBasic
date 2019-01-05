@@ -3,15 +3,17 @@ package com.chendi.training;
 public class ElectronicBike extends Bike implements Compare<Integer> {
     public int speedLimit;
 
-    public int compareWith(Integer a, Integer b) {
+    public ElectronicBike(){}
+
+    public void compareWith(Integer a, Integer b) {
         /**
          * if a=b returns 0; if a>b returns 1; if a<b returns -1;
          */
         if (a < b)
-            return -1;
+            System.out.println(a+ " is smaller than "+b+".");
         else if (a > b)
-            return 1;
-        else return 0;
+            System.out.println(a+ " is larger than "+b+".");
+        else System.out.println("They are the same."); ;
     }
 
     ;
@@ -23,4 +25,10 @@ public class ElectronicBike extends Bike implements Compare<Integer> {
     }
 
     ;
+
+    public static void main (String [] args){
+        ElectronicBike e = new ElectronicBike();
+        e.compareWith(4,4);
+        e.setSpeedLimit(3);
+    }
 }

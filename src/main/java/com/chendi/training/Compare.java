@@ -6,7 +6,7 @@ public interface Compare<A> {
      * @param
      * @return
      */
-    public int compareWith(A a,A b);
+    public void compareWith(A a,A b);
 
     public void setSpeedLimit(int milePerhr);
 }
