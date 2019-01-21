@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class MapLoop {
     public static void main(String args[]){
-        Map map= new HashMap();
+        Map<String,Double> map= new HashMap();
         map.put("Zara", new Double(3434.34));
         map.put("Mahnaz", new Double(123.22));
         map.put("Ayan", new Double(1378.00));
@@ -26,6 +26,10 @@ public class MapLoop {
 
         }
 
+        for(Map.Entry<String,Double> entry:map.entrySet() ){
+
+        }
+
         double zaraValue=((Double)map.get("Zara")).doubleValue();
         map.put("Zara",new Double(zaraValue+1000));
         System.out.println("New value of Zara"+ map.get("Zara"));
@@ -34,3 +38,20 @@ public class MapLoop {
 
     }
 }
+
+
+//public class MyMap{
+//
+//    public static void main(String[] args) {
+//        Map<String, String> map = new HashMap<String, String>();
+//        map.put(“The best smart phone is”, “iPhone!“);
+//        map.put(“The trash smart phones are”, “Android phones”);
+//        for(Map.Entry<String,String> entry:map.entrySet()){
+//            System.out.println(entry.getKey());
+//            System.out.println(entry.getValue());
+//        }
+////            for (String key : map.keySet()) {
+////
+////            }
+//    }
+//}
