@@ -1,4 +1,4 @@
-package com.chendi.training.algorithm;
+package com.chendi.training.practice;
 
 public class CheckingAccount {
     private double balance;

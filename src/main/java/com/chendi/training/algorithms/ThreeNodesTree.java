@@ -1,4 +1,4 @@
-package com.chendi.training.algorithm.algorithms;
+package com.chendi.training.algorithms;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Queue;
 
 public class ThreeNodesTree {
-    int value;
-    ThreeNodesTree left;
-    ThreeNodesTree right;
-    ThreeNodesTree middle;
+   public int value;
+   public ThreeNodesTree left;
+   public ThreeNodesTree right;
+   public ThreeNodesTree middle;
 
     public ThreeNodesTree(){}
 

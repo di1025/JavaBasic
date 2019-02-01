@@ -1,4 +1,4 @@
-package com.chendi.training.algorithm;
+package com.chendi.training.practice;
 
 import java.util.HashMap;
 import java.util.Iterator;
