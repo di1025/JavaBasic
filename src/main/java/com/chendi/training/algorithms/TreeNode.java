@@ -8,12 +8,11 @@ public class TreeNode {
    public TreeNode left;
    public TreeNode right;
 
-   public TreeNode(){}
    public TreeNode(int node){
        this.value=node;
    }
 
-   public static void treeToQueue(TreeNode node){
+   public static List<Integer> treeToQueue(TreeNode node){
        List<TreeNode> list = new ArrayList<TreeNode>();
        Queue<List> myQueue = new ArrayDeque<>();
 
@@ -36,15 +35,28 @@ public class TreeNode {
 
        List<Integer> maxNums = new ArrayList<>();
 
-       for(int i=0; i<myQueue.size();i++){
-           List<TreeNode> queueList = myQueue.poll();
+  //     for(int i=0; i<myQueue.size();i++){
+       for (List<TreeNode> queueList:myQueue){// why the maxNums includes all the nodes?
+//           List<TreeNode> queueList = myQueue.poll();
+           int temp = queueList.get(0).value;
            for (TreeNode n:queueList){
-               int temp = queueList.get(0).value;
                if(n.value>=temp){temp=n.value;}
-               maxNums.add(temp);
            }
+           maxNums.add(temp);
        }
-       System.out.println(maxNums);
+//       int size= myQueue.size();
+////       for(int i=0; i<size;i++){
+//        for(List<Treenodes> mylist:myQueue){
+//          List<TreeNode> queueList = myQueue.poll();
+//           int temp = queueList.get(0).value;
+//           for (TreeNode n:queueList){
+//               if(n.value>=temp){temp=n.value;}
+//           }
+//           maxNums.add(temp);
+
+  //     System.out.println(maxNums);
+       return maxNums;
+
    }
 
    public static void maxNumbers(List<Integer> list){
@@ -69,8 +81,8 @@ public class TreeNode {
        r.left=rl;
        TreeNode rr = new TreeNode(10);
        r.right=rr;
-       treeToQueue(root);
-       List<Integer> a =new ArrayList(Arrays.asList(1,2,9,4,5));
-       maxNumbers(a);
+       System.out.println(treeToQueue(root));
+//       maxNumbers(treeToQueue(root));
+
    }
 }
