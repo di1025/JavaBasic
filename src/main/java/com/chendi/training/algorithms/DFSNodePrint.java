@@ -1,6 +1,6 @@
 package com.chendi.training.algorithms;
 
-public class DFS {
+public class DFSNodePrint {
 
     public static void dfsRecur(TreeNode node) {
         System.out.println(node.value);
@@ -33,5 +33,16 @@ public class DFS {
         r.right.right=rrr;
 
         dfsRecur(root);
+
+        dfsPrint(root);
     }
+
+    public static void dfsPrint(TreeNode n){
+        System.out.println(n);
+        if(n.left!=null){dfsPrint(n.left);}
+        if(n.right!= null){dfsPrint(n.right);}
+    }
+
+
+
 }

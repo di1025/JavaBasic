@@ -1,12 +1,9 @@
 package com.chendi.training.algorithms;
 
-import static com.chendi.training.algorithms.DFS.dfsRecur;
-
 public class DFSPathSum {
 
-
     public static boolean dfsSum(TreeNode node, int sum) {
-
+        if (node == null) return false;
         if (node.left != null || node.right != null) {
             sum -= node.value;
         } else {
@@ -19,7 +16,37 @@ public class DFSPathSum {
         return dfsSum(node.left, sum) || dfsSum(node.right, sum);
     }
 
+    public static boolean sumPath(TreeNode node, int sum) {
+        if (node == null) return false;
+        if (node.right != null || node.left != null) {
+            sum -= node.value;
+        } else {
+            sum -= node.value;
+            if (sum == 0) return true;
+            if (sum != 0) return false;
+        }
+        return sumPath(node.left, sum) || sumPath(node.right, sum);
+    }
+
+
+    public static boolean sumTreePath(TreeNode node, int sum) {
+        if (node == null) return false;
+        if (node.left != null || node.right != null) {
+                sum -= node.value;
+            } else {
+                sum -= node.value;
+                if (sum == 0)
+                    return true;
+                else
+                    return false;
+            }
+        return sumTreePath(node.right, sum) || sumTreePath(node.left, sum);
+    }
+
+
+
     public static void main(String[] args) {
+
         TreeNode root = new TreeNode(1);
 
         TreeNode l = new TreeNode(5);
@@ -42,7 +69,9 @@ public class DFSPathSum {
 
         TreeNode rrr = new TreeNode(10);
         r.right.right = rrr;
+
         System.out.println(dfsSum(root,16));
 
+        System.out.println(sumPath(root,25));
     }
 }
