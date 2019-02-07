@@ -6,6 +6,12 @@ import java.util.List;
 import java.util.Stack;
 
 public class BaseBallGame {
+    public static List setup() {
+        List<String> testdata = new ArrayList<String>(Arrays.asList("5", "2", "C", "D", "+"));
+     //   List<String> score2List = new ArrayList<String>(Arrays.asList("5", "-2", "4", "C", "D", "9", "+", "+"));
+        return testdata;
+    }
+
 
     public int points(List<String> scoreList) {
         Stack<Integer> scorePool = new Stack();
@@ -45,13 +51,45 @@ public class BaseBallGame {
     }
 
     public static void main(String []args){
-        List<String> scoreList = new ArrayList<String>(Arrays.asList("5","2","C","D","+"));
-        List<String> score2List = new ArrayList<String>(Arrays.asList("5","-2","4","C","D","9","+","+"));
         BaseBallGame b = new BaseBallGame();
-        System.out.println(b.points(scoreList));
-        System.out.println(b.points(score2List));
+        System.out.println(b.countScore(BaseBallGame.setup()));
+//        System.out.println(b.countScore(score2List));
 
     }
+
+    public int countScore(List<String> scorelist){
+        Stack<Integer> scoreStack = new Stack<>();
+        for(String s:scorelist){
+            switch (s){
+                case "+" :
+                   int top= scoreStack.pop();
+                   int lastTop=scoreStack.peek();
+                   int thisRound = top+lastTop;
+                   scoreStack.push(top);
+                   scoreStack.push(thisRound);
+                   break;
+
+                case "C":
+                    scoreStack.pop();
+                    break;
+
+                case "D":
+                    int score = scoreStack.peek()*2;
+                    scoreStack.push(score);
+                    break;
+
+                default:
+                    scoreStack.push(Integer.valueOf(s));
+                    break;
+                }
+        }
+        int total = 0;
+        for( int i:scoreStack){
+        total+=i;}
+
+        return total;
+    }
+
 
 
 
