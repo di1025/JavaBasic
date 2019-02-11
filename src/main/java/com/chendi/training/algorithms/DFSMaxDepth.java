@@ -32,7 +32,7 @@ public class DFSMaxDepth {
         TreeNode rrr = new TreeNode(10);
         r.right.right = rrr;
 
-        System.out.println(maxDepth(root)+"+ " +maxD(root));
+        System.out.println(maxDepth(root)+"+ " +maxD(root)+ "+ "+ dfsMaxDepth(root) );
 
     }
 
@@ -42,6 +42,13 @@ public class DFSMaxDepth {
             return 1+Math.max(maxD(n.left),maxD(n.right));
         }
 
+    }
+
+
+    public static int dfsMaxDepth(TreeNode node){
+        if (node==null) return 0;
+        else
+            return 1+Math.max(dfsMaxDepth(node.left), dfsMaxDepth(node.right));
     }
 
 }

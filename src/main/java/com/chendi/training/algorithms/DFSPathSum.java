@@ -29,20 +29,28 @@ public class DFSPathSum {
     }
 
 
-    public static boolean sumTreePath(TreeNode node, int sum) {
-        if (node == null) return false;
-        if (node.left != null || node.right != null) {
-                sum -= node.value;
-            } else {
-                sum -= node.value;
-                if (sum == 0)
-                    return true;
-                else
-                    return false;
-            }
-        return sumTreePath(node.right, sum) || sumTreePath(node.left, sum);
+ public static boolean sumP(TreeNode node, int sum){
+        if(node==null) return false;
+        if(node.left!=null||node.right!=null) sum-=node.value;
+        else{
+            sum-=node.value;
+            if(sum==0) return true;
+            else return false;
+        }
+        return sumP(node.left,sum)||sumP(node.right,sum);
+ }
+    public static boolean sumPath2(TreeNode root, int sum){
+        if(root==null) return false;
+        if(root.right!=null||root.left!=null){
+            sum-=root.value;
+        }
+        else {
+            sum-=root.value;
+            if(sum==0) return true;
+            if(sum!=0) return false;
+        }
+        return sumPath2(root.right,sum)||sumPath2(root.left,sum);
     }
-
 
 
     public static void main(String[] args) {
@@ -73,5 +81,9 @@ public class DFSPathSum {
         System.out.println(dfsSum(root,16));
 
         System.out.println(sumPath(root,25));
+
+        System.out.println(sumPath2(root,16));
     }
+
+
 }

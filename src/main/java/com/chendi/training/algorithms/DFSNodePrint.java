@@ -7,6 +7,11 @@ public class DFSNodePrint {
         if (node.left != null) { dfsRecur(node.left);}
         if (node.right != null) { dfsRecur(node.right); }
     }
+    public static void dfsPrint(TreeNode node){
+        System.out.println(node.value);
+        if(node.left!=null) dfsPrint(node.left);
+        if(node.right!=null) dfsPrint(node.right);
+    }
 
     public static void main (String []args){
         TreeNode root = new TreeNode(1);
@@ -35,13 +40,16 @@ public class DFSNodePrint {
         dfsRecur(root);
 
         dfsPrint(root);
+
+        nodePrint(root);
     }
 
-    public static void dfsPrint(TreeNode n){
-        System.out.println(n);
-        if(n.left!=null){dfsPrint(n.left);}
-        if(n.right!= null){dfsPrint(n.right);}
+    public static void nodePrint(TreeNode node){
+        System.out.println(node);
+        if(node.left!=null) nodePrint(node.left);
+        if(node.right!=null) nodePrint(node.right);
     }
+
 
 
 
