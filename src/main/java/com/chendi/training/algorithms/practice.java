@@ -133,26 +133,7 @@ public class practice {
     int sum;
 
 
-    public int fibonacci(int n,Integer[] mem) {
-        if (n == 0) {
-            mem[0]=0;
-            return 0;
-        }
-        if (n == 1) {
-            mem[1]=1;
-            return 1;
-        }
 
-        if (n <= mem.length) {
-            if(mem[n-1]!=null) {
-                return mem[n-1];
-            }
-        }
-
-        sum = fibonacci(n - 1,mem) + fibonacci(n - 2,mem);
-        mem[n]= sum;
-        return sum;
-    }
 
 
 

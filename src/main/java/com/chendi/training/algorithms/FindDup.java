@@ -37,34 +37,21 @@ public class FindDup {
 
     public static void main(String []args){
         practice p = new practice();
-        System.out.println(dupp(p.arrayA));
+        System.out.println(findDuplicated(p.arrayA));
     }
 
     public static List<Integer> findDuplicated(int[] nums){
-        int [] indicator =new int [nums.length+1];
-        for (int i =0;i<nums.length;i++){
-            indicator[nums[i]]+=1;
-        }
-        List<Integer> result = new ArrayList<>();
-        for(int i=0;i<indicator.length;i++){
-            if (indicator[i]==2){
-                result.add(i);
-            }
-        }
-        return result;
+    int[] arr = new int[nums.length+1];
+    for(int i=0;i<nums.length;i++){
+        arr[nums[i]]+=1;
+    }
+    List dup = new ArrayList();
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]>=2) {dup.add(i);};
+    }
+    return dup;
     }
 
-public static List<Integer> dupp(int[] nums){
-        int[] indicator = new int[nums.length+1];
-        for(int i=0;i<nums.length;i++){
-            indicator[nums[i]]+=1;
-        }
-        List<Integer> result= new ArrayList<>();
-        for (int i=0;i<nums.length;i++){
-            if(indicator[i]>=2)
-                result.add(i);
-        }
- return result;
-}
+
 
 }

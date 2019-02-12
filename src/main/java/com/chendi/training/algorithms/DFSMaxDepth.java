@@ -32,23 +32,31 @@ public class DFSMaxDepth {
         TreeNode rrr = new TreeNode(10);
         r.right.right = rrr;
 
-        System.out.println(maxDepth(root)+"+ " +maxD(root)+ "+ "+ dfsMaxDepth(root) );
+//        System.out.println(maxDepth(root)+"+ " +maxD(root)+ "+ "+ dfsMaxDepth(root) );
 
     }
 
-    public static int maxD(TreeNode n){
-        if(n==null){return 0;}
-        else{
-            return 1+Math.max(maxD(n.left),maxD(n.right));
-        }
+//    public static int maxD(TreeNode n){
+//        if(n==null){return 0;}
+//        else{
+//            return 1+Math.max(maxD(n.left),maxD(n.right));
+//        }
+//
+//    }
+//
+//
+//    public static int dfsMaxDepth(TreeNode node){
+//        if (node==null) return 0;
+//        else
+//            return 1+Math.max(dfsMaxDepth(node.left), dfsMaxDepth(node.right));
+//    }
 
-    }
 
-
-    public static int dfsMaxDepth(TreeNode node){
-        if (node==null) return 0;
+    public static int layerNum(TreeNode node){
+        if(node==null) return 0;
         else
-            return 1+Math.max(dfsMaxDepth(node.left), dfsMaxDepth(node.right));
+            return 1+Math.max(layerNum(node.right),layerNum(node.left));
     }
+
 
 }

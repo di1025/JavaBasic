@@ -82,8 +82,18 @@ public class DFSPathSum {
 
         System.out.println(sumPath(root,25));
 
-        System.out.println(sumPath2(root,16));
+        System.out.println(pathTotal(root,16));
     }
 
+    public static boolean pathTotal(TreeNode node, int sum) {
+        if(node==null) return false;
+        if(node.right!=null||node.left!=null) sum-=node.value;
+        else{
+            sum-=node.value;
+            if(sum!=0) return false;
+            if(sum==0) return true;
+        }
+        return pathTotal(node.right,sum)||pathTotal(node.left,sum);
+    }
 
 }
