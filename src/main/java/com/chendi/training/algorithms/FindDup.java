@@ -1,6 +1,7 @@
 package com.chendi.training.algorithms;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class FindDup {
@@ -53,5 +54,37 @@ public class FindDup {
     }
 
 
+    public static class LinkedListLength extends LinkedList {
 
+            public int data;
+            public LinkedNode head;
+
+            public LinkedListLength(int linkedNode){
+                this.data=linkedNode;
+            }
+
+            public int countLength(){
+                LinkedNode temp =head;
+                int count =0;
+                while(temp!=null){
+                    count++;
+                    temp=temp.next;
+                }
+                return count;
+            }
+
+            public static void main(String []args){
+                LinkedListLength list= new LinkedListLength(1);
+                list.push(1);
+                list.push(1);
+                list.push(1);
+                list.push(1);
+                list.push(1);
+                list.push(1);
+                list.push(1);
+                System.out.println(list.countLength());
+
+            }
+
+        }
 }
