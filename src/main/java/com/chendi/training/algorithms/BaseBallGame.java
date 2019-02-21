@@ -11,7 +11,7 @@ public class BaseBallGame {
      //   List<String> score2List = new ArrayList<String>(Arrays.asList("5", "-2", "4", "C", "D", "9", "+", "+"));
         return testdata;
     }
-
+    List<String> testdata = new ArrayList<String>(Arrays.asList("5", "2", "C", "D", "+"));
 
     public int points(List<String> scoreList) {
         Stack<Integer> scorePool = new Stack();
@@ -53,6 +53,8 @@ public class BaseBallGame {
     public static void main(String []args){
         BaseBallGame b = new BaseBallGame();
         System.out.println(b.countScore(BaseBallGame.setup()));
+        System.out.println(b.countScore(new ArrayList<String>(Arrays.asList("5", "2", "C", "D", "+"))));
+
 //        System.out.println(b.countScore(score2List));
 
     }
@@ -60,6 +62,7 @@ public class BaseBallGame {
     public int countScore(List<String> scorelist){
         Stack<Integer> scoreStack = new Stack<>();
         for(String s:scorelist){
+
             switch (s){
                 case "+" :
                    int top= scoreStack.pop();
@@ -90,8 +93,32 @@ public class BaseBallGame {
         return total;
     }
 
+    public int calPoints(String[] ops) {
+        Stack<Integer> scoreStack= new Stack();
+        for (String n:ops){
+            if(n=="+"){
+                int lastRound=scoreStack.pop();
+                int lastTwoRound=scoreStack.peek();
+                int thisRound=lastRound+lastTwoRound;
+                scoreStack.push(lastRound);
+                scoreStack.push(thisRound);
+            }
+            else if(n=="D"){
+                int lastRound = scoreStack.peek();
+                int thisRound = lastRound*2;
+                scoreStack.push(thisRound);
+            }
+            else if(n=="C"){
+                scoreStack.pop();
+            }
+            else scoreStack.push(Integer.valueOf(n));
+        }
 
-
-
+        int total=0;
+        for(int s: scoreStack){
+            total+=s;
+        }
+        return total;
+    }
 }
 

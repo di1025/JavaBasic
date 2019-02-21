@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+//https://www.w3resource.com/java-exercises/basic/index.php
 public class practice {
 
     public static void div3(){
@@ -113,6 +115,17 @@ public class practice {
         return result;
     }
 
+    public static String reverseLetter(String s ){
+        s=s.trim();
+        char[] ch =s.toCharArray();
+        String result="";
+
+        for(int i=s.length()-1;i>=0;i--){
+            result+=ch[i];
+        }
+        return result;
+    }
+
     public int[] arrayA = new int[]{4,3,2,7,8,2,3,1,3};
 
     public List<Integer> dup(int[] array){
@@ -129,8 +142,47 @@ public class practice {
         return result;
     }
 // return the n th value=(n-1)+(n-2)
+//63
+    public static Integer compareTwo(int a,int b){
+        if(a==b) {
+            return 0;
+        }
+        if (a>b) {
+            return a;
+        }
+        if (a<b) {
+            if (a%6 == b%6) return a;
+            else return b;
+        }
+        return null;
+//        if (){
+//
+//        }else if(){
+//
+//        }else if{
+//
+//        }else{
+//
+//        }
 
-    int sum;
+    }
+
+    //64
+    public static boolean compareDigit(int a, int b){
+        if(a<25||a>75||b<25||b>75) return false;
+        int c=a%10;
+        int d=a/10;
+        int e=b%10;
+        int f=a/10;
+        return (c==e||c==f||d==e||d==f);
+    }
+    //是否是余数
+    public static boolean isPrime(int n){
+        for (int i=3;i*i<=n;i+=2){
+            if(n%i==0) return false;
+        }
+        return true;
+    }
 
 
 
@@ -158,7 +210,9 @@ public class practice {
 //        System.out.println(firstLetterCapital("the cat is cute!"));
 //        capitalToLower("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG");
 //        System.out.println(penultimate("The quick brown fox jumps over the lazy dog."));
-        System.out.println(reverse("reh"));
+//        System.out.println(reverseLetter("reh"));
+//        System.out.println(compareTwo(12,13));
+        System.out.println(compareDigit(34,43));
     }
 
 }
