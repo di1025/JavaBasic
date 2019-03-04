@@ -95,5 +95,4 @@ public class DFSPathSum {
         }
         return pathTotal(node.right,sum)||pathTotal(node.left,sum);
     }
-
 }
