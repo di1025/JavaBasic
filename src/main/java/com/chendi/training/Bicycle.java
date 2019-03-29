@@ -7,6 +7,9 @@ public class Bicycle extends Bike {
                    int num,
                    String sShape,
                    int pNum) {
+//        this.wheelNum = num;
+//        this.wheelShape = wShape;
+//        this.seatShape = sShape;
         super(wShape, num, sShape);
         pedalNum = pNum;
     }
@@ -28,6 +31,4 @@ public class Bicycle extends Bike {
          Bicycle.speedLimit();
          System.out.println("The bicycle cannot have "+firstBicycle.impossible()+" wheels");
      }
-
-
 }

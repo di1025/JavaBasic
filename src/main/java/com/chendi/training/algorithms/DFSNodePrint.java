@@ -1,5 +1,8 @@
 package com.chendi.training.algorithms;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DFSNodePrint {
 
     public static void dfsRecur(TreeNode node) {
@@ -7,7 +10,18 @@ public class DFSNodePrint {
         if (node.left != null) { dfsRecur(node.left);}
         if (node.right != null) { dfsRecur(node.right); }
     }
-    public static void dfsPrint(TreeNode node){
+
+    public List<Integer> leftBranch(){
+        List<Integer> leftBranch = new ArrayList<Integer>();
+         return leftBranch;
+    }
+
+    public List<Integer> rightBranch(){
+        List<Integer> rightBranch = new ArrayList<Integer>();
+        return rightBranch;
+    }
+
+    public void dfsPrint(TreeNode node){
         System.out.println(node.value);
         if(node.left!=null) dfsPrint(node.left);
         if(node.right!=null) dfsPrint(node.right);
@@ -38,8 +52,9 @@ public class DFSNodePrint {
         r.right.right=rrr;
 
         dfsRecur(root);
+        DFSNodePrint dfsNodePrint = new DFSNodePrint();
 
-        dfsPrint(root);
+        dfsNodePrint.dfsPrint(root);
 
         nodePrint(root);
     }
@@ -49,8 +64,5 @@ public class DFSNodePrint {
         if(node.left!=null) nodePrint(node.left);
         if(node.right!=null) nodePrint(node.right);
     }
-
-
-
 
 }

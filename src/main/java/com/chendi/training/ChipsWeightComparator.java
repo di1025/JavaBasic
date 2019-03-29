@@ -1,4 +1,4 @@
-package com.chendi.training.practice;
+package com.chendi.training;
 
 import com.chendi.training.Chips;
 

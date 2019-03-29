@@ -1,13 +1,13 @@
 package com.chendi.training;
 
-import com.chendi.training.practice.ChipsWeightComparator;
-
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class Chips implements Comparable<Chips> {
-    int weight;
+    public int weight;
     String type;
+    String taste;
 
     public Chips(){};
 
@@ -16,11 +16,13 @@ public class Chips implements Comparable<Chips> {
 
     public int getWeight(){
         return this.weight;
-    };
+    }
 
     public String getType(){
         return this.type;
     }
+
+    public String getTaste(){return this.taste;}
 
     public void vol(){
         System.out.println(this.weight );
@@ -35,6 +37,22 @@ public class Chips implements Comparable<Chips> {
 //        return c.getType().compareTo(type);//descending
     }
 
+
+    @Override
+    public boolean equals(Object c) {
+        if (this == c) return true;
+        if (c == null || getClass() != c.getClass()) return false;
+        Chips chips = (Chips) c;
+        return weight == chips.weight &&
+                Objects.equals(type, chips.type);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = weight;
+        result=31*result+type.hashCode();
+        return result;
+    }
 
     public static void  main(String[] args){
 //        System.out.println("Hello foodie!");
@@ -60,9 +78,5 @@ public class Chips implements Comparable<Chips> {
         for(Chips c:list){
             System.out.println(c.getWeight()+" "+c.getType());
         }
-
-
-    };
-
-
+    }
 }
