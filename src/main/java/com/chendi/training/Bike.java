@@ -79,6 +79,7 @@ public class Bike {
         Bike secBike1 = new Bike("Square", 2, "Square");
         Bike thirdBike = new Bike("Round", 3, "Round");
         Bike thirdBike1 = new Bike("Round", 3, "Square");
+
         System.out.println(firstBike.equals(firstBike1));
         System.out.println(secBike.equals(secBike1));
         System.out.println(thirdBike.equals(thirdBike1));

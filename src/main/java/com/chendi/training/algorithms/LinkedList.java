@@ -77,8 +77,6 @@ public class LinkedList {
             slow=slow.next;
         }
         return slow.data;
-
-
     }
 
 

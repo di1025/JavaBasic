@@ -24,8 +24,6 @@ public class BFSLayerPrint {
                 if (n.left!=null){ list.add(n.left); valueList.add(n.left.value);}
                 if (n.right!=null){ list.add(n.right); valueList.add(n.right.value);}
             }
-
-
         }
         return result;
 
