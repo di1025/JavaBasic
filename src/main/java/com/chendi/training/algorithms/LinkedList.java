@@ -57,13 +57,17 @@ public class LinkedList {
         LinkedNode current=head;
         LinkedNode middle=head;
         if(head==null) return 0;
-        while(current.next!=null){
+        while(current!=null) {
             length++;
-            if(length%2==0){
-                middle=middle.next;
+            if (length % 2 == 0) {
+                middle = middle.next;
             }
-            current=current.next;
+            current = current.next;
         }
+//            if (length % 2 == 0) {
+//                middle = middle.next;
+//            }
+
         return middle.data;
     }
 
@@ -95,8 +99,9 @@ public class LinkedList {
         node3.next = node4;
         node4.next=node5;
 
+
         System.out.println(l.countNode(head));
-        System.out.println( findMidEle(head));
+        System.out.println( findMiddle(head));
         System.out.println(findMiddleByTwoPointer(head));
 
     }

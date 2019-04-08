@@ -26,7 +26,6 @@ public class BFSLayerPrint {
             }
         }
         return result;
-
     }
 
     public static void main (String []args){

@@ -11,15 +11,7 @@ public class DFSNodePrint {
         if (node.right != null) { dfsRecur(node.right); }
     }
 
-    public List<Integer> leftBranch(){
-        List<Integer> leftBranch = new ArrayList<Integer>();
-         return leftBranch;
-    }
 
-    public List<Integer> rightBranch(){
-        List<Integer> rightBranch = new ArrayList<Integer>();
-        return rightBranch;
-    }
 
     public void dfsPrint(TreeNode node){
         System.out.println(node.value);

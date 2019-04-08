@@ -1,10 +1,18 @@
 package com.chendi.training.algorithms;
 
 public class DFSMaxDepth {
+
     public static int maxDepth(TreeNode node){
         if(node==null){ return 0;}
         else
             return 1+Math.max(maxDepth(node.left),maxDepth(node.right));
+    }
+
+    public static int layer(TreeNode node){
+        if(node==null) return 0;
+        else
+            return 1+Math.max(layer(node.right),layer(node.left));
+
     }
 
     public static void main(String[] args) {
@@ -32,7 +40,7 @@ public class DFSMaxDepth {
         TreeNode rrr = new TreeNode(10);
         r.right.right = rrr;
 
-//        System.out.println(maxDepth(root)+"+ " +maxD(root)+ "+ "+ dfsMaxDepth(root) );
+        System.out.println(maxDepth(root)+"+ " +layer(root) );
 
     }
 

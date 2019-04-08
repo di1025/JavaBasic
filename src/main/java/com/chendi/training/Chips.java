@@ -32,7 +32,7 @@ public class Chips implements Comparable<Chips> {
 //        return c.weight-this.weight;//this-c is ascending; c-this is descending;
 //    }
 
-    public int compareTo(Chips c){
+    public int compareTo(Chips c){// only can implement one logic
         return type.compareTo(c.getType()); // ascending
 //        return c.getType().compareTo(type);//descending
     }
