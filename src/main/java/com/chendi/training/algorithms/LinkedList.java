@@ -83,6 +83,28 @@ public class LinkedList {
         return slow.data;
     }
 
+    public static int mid(LinkedNode head){
+        LinkedNode slow = head;
+        LinkedNode quick= head;
+
+        while(quick != null && quick.next != null){
+            quick=quick.next.next;
+            slow=slow.next;
+        }
+        return slow.data;
+    }
+
+    public static LinkedNode middleNode(LinkedNode head) {
+        LinkedNode slow = head;
+        LinkedNode quick = head;
+
+        while(quick!=null && quick.next!=null){
+            quick=quick.next.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+
 
     public static void main(String []args){
         LinkedList l=new LinkedList();
@@ -101,8 +123,8 @@ public class LinkedList {
 
 
         System.out.println(l.countNode(head));
-        System.out.println( findMiddle(head));
-        System.out.println(findMiddleByTwoPointer(head));
+        System.out.println( middleNode(head));
+        System.out.println(mid(head));
 
     }
 }

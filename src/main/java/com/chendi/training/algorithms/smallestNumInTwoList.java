@@ -21,10 +21,24 @@ public class smallestNumInTwoList {
         }
         return -1;
     }
+
+    public static int smallestNumInList(int[] A, int[] B){
+        int asize = A.length;
+        int bsize = B.length;
+
+        Arrays.sort(A);
+        Arrays.sort(B);
+
+        int b=0;
+        for (int a=0;a<asize;a++){
+            while(b<bsize && B[b]<=A[a]){
+                b++;
+                if(B[b]==A[a]){
+                    return B[b];
+                }
+            }
+        }
+        return -1;
+    }
+
 }
-
-
-
-
-
-

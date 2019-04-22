@@ -51,7 +51,8 @@ public class Fibonacci {
 //        f.fibonacci(10, new Integer[10]);
 //        System.out.println(f.getFibonacci(0));
         Integer[] mem = new Integer[11];
-        System.out.println(fftest(0));
+        System.out.println(fibonacci(0));
+        System.out.println(fibonacci(10));
         System.out.println(fftest(10));
 
 

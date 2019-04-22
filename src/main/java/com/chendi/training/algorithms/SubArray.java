@@ -44,6 +44,7 @@ public class SubArray {
             return true;
 
     }
+
     static boolean sub(int arr1[], int arr2[], int m,
                             int n)
     {

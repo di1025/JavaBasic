@@ -101,9 +101,36 @@ public class BFSMaxNumInLayer {
         r.left=rl;
         TreeNode rr = new TreeNode(10);
         r.right=rr;
-        System.out.println(maxNumInLayer(root));
+        System.out.println(layer(root));
         System.out.println(treeLayer(root));
 //        treeLayer(root);
 
+    }
+
+
+    public static List<List<Integer>> layer(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer> > result = new ArrayList<>();
+
+        queue.offer(root);
+
+        while(queue.size()!=0){
+            List<Integer> temp = new ArrayList<>();
+            int queueSize = queue.size();
+
+            for(int i=0;i<queueSize;i++){
+                TreeNode node = queue.poll();
+                temp.add(node.value);
+
+                if(node.right!=null){
+                    queue.offer(node.right);
+                }
+                if(node.left!=null){
+                    queue.offer(node.left);
+                }
+            }
+             result.add(temp);
+        }
+         return result;
     }
 }

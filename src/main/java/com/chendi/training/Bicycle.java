@@ -7,9 +7,7 @@ public class Bicycle extends Bike {
                    int num,
                    String sShape,
                    int pNum) {
-//        this.wheelNum = num;
-//        this.wheelShape = wShape;
-//        this.seatShape = sShape;
+
         super(wShape, num, sShape);
         pedalNum = pNum;
     }
@@ -21,6 +19,7 @@ public class Bicycle extends Bike {
     public static void speedLimit(){
         System.out.println("The speed limitation is 45 miles/hour");
     }
+
     public int impossible(){
         return this.wheelNum+1;
     }
