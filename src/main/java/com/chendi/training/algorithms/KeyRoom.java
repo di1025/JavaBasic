@@ -27,14 +27,6 @@ public class KeyRoom {
 
         }
 
-//        for(int k:keys)
-//            if(keys.size()!=0)
-//                for (int r:rooms.get(k))
-//                    if(opened[r]==0) {
-//                        keys.push(r);
-//                        opened[r] = 1;
-//                    }
-
         for(int i:opened){
             if(i==0) return false;
         }

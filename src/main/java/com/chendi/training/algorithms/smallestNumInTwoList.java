@@ -2,6 +2,8 @@ package com.chendi.training.algorithms;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class smallestNumInTwoList {
     public int smallNumInlists(int[] A, int[] B) {
@@ -23,6 +25,7 @@ public class smallestNumInTwoList {
     }
 
     public static int smallestNumInList(int[] A, int[] B){
+
         int asize = A.length;
         int bsize = B.length;
 

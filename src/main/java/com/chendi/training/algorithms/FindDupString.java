@@ -4,7 +4,7 @@ package com.chendi.training.algorithms;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DupString {
+public class FindDupString {
 
     public static void findDupLetter(String str){
         int[] count = new int[256];
@@ -26,7 +26,7 @@ public class DupString {
 
         char[] charArray = str.toCharArray();
 
-        for(Character c:charArray) {
+        for(char c:charArray) {
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) + 1);
             }
